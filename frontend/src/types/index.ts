@@ -75,3 +75,5 @@ interface FlashcardsMessage extends BaseMessage {
 }
 
 export type Message = TextMessage | SummaryMessage | QuizMessage | ImageMessage | FlashcardsMessage;
+// Difficulty levels
+export type Difficulty = "easy" | "medium" | "hard";

@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "target": "es2017",
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "node",
+    "types": ["node", "vite/client", "react", "react-dom"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true
   },
   "references": [
@@ -7,5 +14,4 @@
     { "path": "./tsconfig.node.json" }
   ]
 }
-
 

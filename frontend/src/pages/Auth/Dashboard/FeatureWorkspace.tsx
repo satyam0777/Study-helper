@@ -574,6 +574,8 @@ import toast from 'react-hot-toast';
 import SummaryResponse from '../../../components/features/SummaryResponse';
 import QuizResponse from '../../../components/features/QuizResponse';
 import FlashcardsResponse from '../../../components/features/FlashcardsResponse';
+import type { Message, Difficulty } from '../../../types';
+
 import ReactMarkdown from 'react-markdown';
 
 const FeatureWorkspace = () => {
@@ -582,11 +584,21 @@ const FeatureWorkspace = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [summaryType, setSummaryType] = useState<'paragraph' | 'keypoints' | 'bullets'>('paragraph');
-  const [quizOptions, setQuizOptions] = useState({
-    numberOfQuestions: 5,
-    difficulty: 'medium',
-    questionType: 'multiple-choice',
-  });
+  // const [quizOptions, setQuizOptions] = useState({
+  //   numberOfQuestions: 5,
+  //   difficulty: 'medium',
+  //   questionType: 'multiple-choice',
+  // });
+  const [quizOptions, setQuizOptions] = useState<{
+  numberOfQuestions: number;
+  difficulty: Difficulty;
+  questionType: string;
+}>({
+  numberOfQuestions: 5,
+  difficulty: 'medium',
+  questionType: 'multiple-choice',
+});
+
   const [flashcardType, setFlashcardType] = useState<'basic' | 'qa' | 'cloze'>('basic');
 
   const handleSendMessage = async (e: React.FormEvent) => {
@@ -899,7 +911,9 @@ const FeatureWorkspace = () => {
                   min={1}
                   max={20}
                   value={quizOptions.numberOfQuestions}
-                  onChange={e => setQuizOptions(q => ({ ...q, numberOfQuestions: Number(e.target.value) }))}
+                  // onChange={e => setQuizOptions(q => ({ ...q, numberOfQuestions: Number(e.target.value) }))}
+                  onChange={e => setQuizOptions(q => ({ ...q, difficulty: e.target.value as Difficulty }))}
+
                   className="w-20 px-3 py-3 border border-slate-300 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 shadow-sm text-center"
                   disabled={isLoading}
                   title="Number of Questions"
