@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es2017",
     "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
+    "module": "Node16",
     "types": ["node", "vite/client", "react", "react-dom"],
     "skipLibCheck": true,
     "esModuleInterop": true,

@@ -626,21 +626,21 @@ import { useState, useEffect } from 'react';
 
 const LandingPage = () => {
   const [showAbout, setShowAbout] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  // ...existing code...
   const [currentWord, setCurrentWord] = useState(0);
   
   const words = ['Learn', 'Create', 'Discover', 'Achieve'];
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
+  // ...existing code...
+  // ...existing code...
     
     const wordInterval = setInterval(() => {
       setCurrentWord((prev) => (prev + 1) % words.length);
     }, 2000);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+  // ...existing code...
       clearInterval(wordInterval);
     };
   }, []);

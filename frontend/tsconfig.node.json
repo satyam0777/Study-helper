@@ -9,7 +9,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+  // ...existing code...
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "outDir": "dist", // Define an output directory
