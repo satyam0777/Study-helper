@@ -14,9 +14,7 @@ const router = Router();
 router.post('/register', register);
 router.post('/login', login);
 // In src/routes/authRoutes.ts
-router.get('/register', (req, res) => {
-  res.status(405).json({ error: 'Method Not Allowed' });
-});
+// ...existing code...
 // Protected routes
 router.get('/profile', authenticateToken, getProfile);
 router.put('/profile', authenticateToken, updateProfile);

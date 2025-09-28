@@ -22,9 +22,14 @@ const app = express();
 
 // Security middleware
 app.use(helmet());
+// app.use(cors({
+//   origin: ['http://localhost:3000', 'http://localhost:5173'],
+//   credentials: true
+// }));
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
-  credentials: true
+  origin: 'https://study-helper-six.vercel.app', // your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // allowed methods
+  credentials: true // if you use cookies
 }));
 
 // General middleware
